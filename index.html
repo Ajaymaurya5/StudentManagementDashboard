@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">🎓</div>
+        <div>
+          <h2>EduManage</h2>
+        </div>
+      </div>
+
+      <p class="side-label">Main Menu</p>
+      <nav class="nav-menu">
+        <a class="active" href="#">Overview</a>
+        <a href="#studentForm">Add Student</a>
+        <a href="#studentRecords">Records</a>
+        <a href="#">Exams</a>
+        <a href="#">Reports</a>
+        <a href="#">Settings</a>
+      </nav>
+
+      <div class="mini-summary">
+        <span>New Admissions</span>
+        <strong id="miniAdmissions">0</strong>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Academic Command Center</p>
+          <h1>Student Dashboard</h1>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="ghost-btn">Generate Report</button>
+          <div class="admin-pill">Admin</div>
+        </div>
+      </header>
+
+      <section class="hero-banner">
+        <div>
+          <p class="hero-tag">Welcome back</p>
+          <h2>Everything is running smoothly.</h2>
+        </div>
+        <p id="overviewSummary">Your student ecosystem is aligned and performing at its best.</p>
+      </section>
+
+      <section class="stats">
+        <div class="stat-card primary">
+          <div class="stat-icon">👥</div>
+          <div>
+            <span>Total Students</span>
+            <h2 id="totalStudents">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card success">
+          <div class="stat-icon">📚</div>
+          <div>
+            <span>Active Courses</span>
+            <h2 id="totalCourses">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card warning">
+          <div class="stat-icon">✨</div>
+          <div>
+            <span>New This Week</span>
+            <h2 id="recentStudents">0</h2>
+          </div>
+        </div>
+
+        <div class="stat-card accent">
+          <div class="stat-icon">📈</div>
+          <div>
+            <span>Attendance</span>
+            <h2 id="attendanceRate">0%</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="insights-grid">
+        <article class="panel overview-panel">
+          <div class="panel-header">
+            <h3>Course Distribution</h3>
+            <span>Live overview</span>
+          </div>
+          <div id="courseBreakdown" class="course-breakdown"></div>
+        </article>
+
+        <article class="panel activity-panel">
+          <div class="panel-header">
+            <h3>Recent Activity</h3>
+            <span>Updated today</span>
+          </div>
+          <ul class="activity-list">
+            <li>
+              <span class="dot emerald"></span>
+              <div>
+                <strong>Admission cycle started</strong>
+                <small>12 new applications</small>
+              </div>
+            </li>
+            <li>
+              <span class="dot blue"></span>
+              <div>
+                <strong>Faculty review completed</strong>
+                <small>9 records approved</small>
+              </div>
+            </li>
+            <li>
+              <span class="dot purple"></span>
+              <div>
+                <strong>Student documents verified</strong>
+                <small>7 profiles updated</small>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="panel small-panel">
+          <div class="panel-header">
+            <h3>Performance Snapshot</h3>
+            <span>Today</span>
+          </div>
+          <div class="metric-list">
+            <div class="metric-row"><span>Average Score</span><strong>87%</strong></div>
+            <div class="metric-row"><span>Pass Rate</span><strong>94%</strong></div>
+            <div class="metric-row"><span>Assignment Submission</span><strong>89%</strong></div>
+          </div>
+        </article>
+
+        <article class="panel small-panel">
+          <div class="panel-header">
+            <h3>Today's Schedule</h3>
+            <span>Class planner</span>
+          </div>
+          <ul class="schedule-list">
+            <li><span>09:00</span><strong>Data Structures</strong></li>
+            <li><span>11:00</span><strong>Web Development</strong></li>
+            <li><span>14:00</span><strong>Placement Prep</strong></li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="exam-section panel">
+        <div class="panel-header form-header">
+          <h3>Exam Overview</h3>
+          <span>Upcoming assessments</span>
+        </div>
+
+        <div class="exam-grid">
+          <div class="exam-card exam-primary">
+            <div class="exam-top">
+              <span class="exam-badge">Midterm</span>
+              <span class="exam-status">Live</span>
+            </div>
+            <h4>Semester Exam</h4>
+            <p>Starts on 18 Nov 2026</p>
+            <div class="exam-meta">
+              <span>240 Students</span>
+              <strong>12 Papers</strong>
+            </div>
+          </div>
+
+          <div class="exam-card exam-success">
+            <div class="exam-top">
+              <span class="exam-badge">Final</span>
+              <span class="exam-status">Scheduled</span>
+            </div>
+            <h4>Final Assessment</h4>
+            <p>Starts on 03 Dec 2026</p>
+            <div class="exam-meta">
+              <span>220 Students</span>
+              <strong>10 Papers</strong>
+            </div>
+          </div>
+
+          <div class="exam-card exam-warning">
+            <div class="exam-top">
+              <span class="exam-badge">Practical</span>
+              <span class="exam-status">Pending</span>
+            </div>
+            <h4>Lab Evaluation</h4>
+            <p>Starts on 10 Dec 2026</p>
+            <div class="exam-meta">
+              <span>180 Students</span>
+              <strong>8 Labs</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="studentForm">
+        <div class="panel-header form-header">
+          <h3 id="formTitle">Add New Student</h3>
+        </div>
+
+        <form id="studentFormElement">
+          <input type="hidden" id="studentId">
+
+          <div class="form-grid">
+            <label>
+              Full Name
+              <input id="name" type="text" placeholder="Enter student name" required>
+            </label>
+
+            <label>
+              Roll Number
+              <input id="roll" type="text" placeholder="Enter roll number" required>
+            </label>
+
+            <label>
+              Email Address
+              <input id="email" type="email" placeholder="student@example.com" required>
+            </label>
+
+            <label>
+              Course
+              <select id="course" required>
+                <option value="">Select course</option>
+                <option value="B.Tech EC">B.Tech EC</option>
+                <option value="B.Tech CSE">B.Tech CSE</option>
+                <option value="B.Tech EE">B.Tech EE</option>
+                <option value="BCA">BCA</option>
+                <option value="MCA">MCA</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" id="saveButton">Add Student</button>
+            <button type="button" id="cancelButton" class="secondary hidden">Cancel Edit</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" id="studentRecords">
+        <div class="table-heading">
+          <div>
+            <h3>Student Records</h3>
+            <p>Search, review, and manage records.</p>
+          </div>
+        </div>
+
+        <div class="filters">
+          <input id="search" type="search" placeholder="Search by name, roll number or email...">
+
+          <select id="courseFilter">
+            <option value="">All Courses</option>
+            <option value="B.Tech EC">B.Tech EC</option>
+            <option value="B.Tech CSE">B.Tech CSE</option>
+            <option value="B.Tech EE">B.Tech EE</option>
+            <option value="BCA">BCA</option>
+            <option value="MCA">MCA</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Roll No.</th>
+                <th>Email</th>
+                <th>Course</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="studentTable"></tbody>
+          </table>
+        </div>
+
+        <p id="emptyMessage" class="empty">No students found. Add your first student above.</p>
+      </section>
+
+      <footer>Student Management Dashboard © 2026</footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
